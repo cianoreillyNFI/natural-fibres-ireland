@@ -1,0 +1,15 @@
+NATURAL FIBRES IRELAND — V10
+
+The only design/content changes from V9 are:
+  index.html
+  styles.css
+
+If V9 is already working in your fresh GitHub repository, upload only those two files.
+
+If you want a completely clean upload, use the full V10 ZIP instead.
+
+Suggested commit:
+  V10: story-led fibre homepage
+
+The .com redirect repository does not change.
+No Blacknight DNS changes are needed.

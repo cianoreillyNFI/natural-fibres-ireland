@@ -1,20 +1,13 @@
-# Natural Fibres Ireland — V9
+# Natural Fibres Ireland — V10
 
-A clean, full GitHub Pages build of naturalfibresireland.ie.
+V10 keeps the full V9 site, but rebuilds the homepage as a story about fibres:
 
-## Navigation
+1. Fibre as an old and essential material
+2. Why fibres matter again
+3. Ireland's existing fibre story
+4. The processing chain between field and product
+5. Hemp, flax, wool, willow and nettle
+6. Carbon and the EU CRCF framework
+7. Natural Fibres Ireland as a place for people who want to help build the sector
 
-- Fibres
-- Farmers
-- Programme
-- Carbon
-- Hemp licence
-- Get involved
-
-There is deliberately no About page or named founder section.
-
-## Hosting
-
-The build uses relative internal paths so it can be tested at a GitHub Pages project URL before the custom domain is attached.
-
-The site has no external CSS or JavaScript dependencies.
+No About/founder page is included.
