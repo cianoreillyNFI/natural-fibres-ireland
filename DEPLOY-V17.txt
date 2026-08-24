@@ -1,0 +1,17 @@
+NATURAL FIBRES IRELAND — V17
+
+Use as a full replacement.
+
+1. Extract this ZIP.
+2. Upload all extracted files to the repository root.
+3. Replace existing files when prompted.
+4. Commit:
+   V17 photo backgrounds and fibre videos
+5. GitHub Pages remains main / root.
+
+New image assets:
+  nfi-landscape-background.jpg
+  nfi-sheep-background.webp
+
+Main navigation remains:
+  Home · Fibres · Carbon · Programme · Get involved

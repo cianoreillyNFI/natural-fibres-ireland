@@ -1,4 +1,4 @@
-# Natural Fibres Ireland — V15
+# Natural Fibres Ireland — V17
 
 Main navigation:
 - Home
@@ -7,9 +7,10 @@ Main navigation:
 - Programme
 - Get involved
 
-Key changes:
-- white body text removed from major content sections
-- dark text on light linen/paper backgrounds for readability
-- Hemp licence guide linked from the Hemp section on Fibres
-- YouTube flax video embedded beside the Flax section
-- licensing remains secondary and is not in the main navigation
+V17:
+- all five fibre videos remain embedded
+- Hemp licensing remains under Fibres
+- landscape photograph used as a faded Home hero background
+- sheep photograph used as a faded background on Fibres and Get involved page headers
+- text remains dark for readability
+- cache-busted stylesheet: styles-v17.css
