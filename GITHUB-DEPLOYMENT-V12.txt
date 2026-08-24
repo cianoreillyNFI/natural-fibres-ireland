@@ -1,0 +1,39 @@
+NATURAL FIBRES IRELAND — V12 SIMPLE FULL SITE
+
+V12 should replace the previous site completely.
+
+RECOMMENDED
+1. Open the GitHub repository you want to use as the live site.
+2. Delete the existing website files from the repository.
+3. Extract the V12 ZIP on your computer.
+4. Upload the CONTENTS of the extracted V12 folder to the repository root.
+5. Confirm these are visible at the top level:
+     index.html
+     styles.css
+     script.js
+     nfi-logo.png
+     hemp-licence-ireland/
+6. Commit:
+     V12 simple Natural Fibres Ireland site
+
+PAGES
+7. Settings -> Pages
+8. Deploy from a branch
+9. main / root
+10. Save
+
+TEST
+11. Open the temporary GitHub Pages URL first.
+12. Check the main navigation:
+     Mission
+     Fibres
+     Carbon
+     Programme
+     Contact
+13. Check:
+     /hemp-licence-ireland/
+
+CUSTOM DOMAIN
+14. Once the temporary site is correct, attach naturalfibresireland.ie in Settings -> Pages.
+15. Do not change the existing Blacknight GitHub Pages DNS.
+16. Do not edit the .com redirect repository.
