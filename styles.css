@@ -312,3 +312,436 @@ h3{
   display:inline-block;
   margin-top:12px;
 }
+
+
+/* ==========================================================
+   V7 — cross-browser compatibility and progressive enhancement
+   ========================================================== */
+
+/* Consistent text sizing on iOS/Safari and modern mobile browsers */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+/* Older engines get ordinary max-width layout before width:min() */
+.container{
+  width:calc(100% - 40px);
+  max-width:var(--max);
+  margin-left:auto;
+  margin-right:auto;
+}
+.narrow{
+  width:calc(100% - 40px);
+  max-width:840px;
+  margin-left:auto;
+  margin-right:auto;
+}
+@supports (width:min(100%, 1px)){
+  .container{width:min(calc(100% - 40px),var(--max))}
+  .narrow{width:min(calc(100% - 40px),840px)}
+}
+
+/* Safari prefix; opaque background remains a fallback where blur is unsupported */
+.site-header{
+  position:-webkit-sticky;
+  position:sticky;
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+}
+
+/* Make keyboard focus obvious on every major browser */
+a:focus,
+button:focus,
+summary:focus,
+input:focus,
+select:focus,
+textarea:focus{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+@supports selector(:focus-visible){
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible),
+  summary:focus:not(:focus-visible){
+    outline:none;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+}
+
+/* Picture wrappers need to behave like the original image boxes */
+.hero-field-image picture,
+.fibre-photo picture{
+  display:block;
+  width:100%;
+}
+.hero-field-image picture img,
+.fibre-photo picture img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+@supports (aspect-ratio:1 / 1){
+  .hero-field-image picture img{aspect-ratio:1.12 / 1}
+  .fibre-photo picture img{aspect-ratio:4 / 3}
+}
+
+/* Touch-friendly controls */
+.nav-toggle,
+.nav-links a,
+.nav-dropdown summary,
+button,
+.btn{
+  -webkit-tap-highlight-color:rgba(18,60,42,.12);
+}
+.nav-toggle{
+  min-width:44px;
+  min-height:44px;
+}
+
+/* Progressive enhancement:
+   with JavaScript disabled, mobile visitors still see the navigation. */
+@media(max-width:900px){
+  .nav-toggle{display:none}
+  .nav-links{
+    display:flex;
+    position:static;
+    flex-direction:column;
+    align-items:stretch;
+    width:100%;
+    padding:12px 0;
+    border:0;
+    box-shadow:none;
+    background:transparent;
+  }
+  .js .nav-toggle{display:block}
+  .js .nav-links{
+    display:none;
+    position:absolute;
+    left:20px;
+    right:20px;
+    top:72px;
+    width:auto;
+    padding:16px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    box-shadow:0 12px 30px rgba(18,60,42,.10);
+  }
+  .js .nav-links.open{display:flex}
+}
+
+/* Old iPhone/Safari flex and long-string safety */
+.footer-links,
+.footer-brand,
+.fibre-copy,
+.editorial-hero-copy{
+  min-width:0;
+}
+.footer-links a,
+.contact-card a,
+.form-note a{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+/* Avoid hover-only movement on touch devices */
+@media(hover:hover) and (pointer:fine){
+  .btn:hover{transform:translateY(-1px)}
+}
+@media(hover:none){
+  .btn:hover{transform:none}
+}
+
+/* Respect users who disable animation */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+/* Small-screen width fallback without relying on CSS min() */
+@media(max-width:640px){
+  .container,
+  .narrow{
+    width:calc(100% - 28px);
+  }
+}
+
+
+/* ==========================================================
+   V8 — factual/editorial content layer
+   ========================================================== */
+
+.dateline{
+  margin:0 0 16px;
+  color:#846a38;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.075em;
+}
+
+.factual-hero h1{
+  max-width:880px;
+  font-size:clamp(3.15rem,6.2vw,6.35rem);
+}
+.source-line{
+  display:inline-block;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.5;
+}
+a.source-line,
+.source-line a{
+  color:#5f674f;
+  text-decoration:none;
+  border-bottom:1px solid #b9b7a9;
+}
+.hero-actions{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.section-intro{
+  max-width:780px;
+  margin-bottom:40px;
+}
+.section-intro h2{
+  margin-bottom:12px;
+}
+.narrow-intro{
+  max-width:680px;
+}
+
+.chain-status{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.chain-link{
+  min-height:132px;
+  padding:20px 16px 22px;
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:28px;
+}
+.chain-link:last-child{border-right:0}
+.chain-link strong{
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-size:1.08rem;
+  font-weight:600;
+  line-height:1.15;
+}
+.chain-link span{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  font-size:.68rem;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+.chain-present{background:#e8ede5}
+.chain-developing{background:#f3eedf}
+.chain-fragmented{
+  background-image:repeating-linear-gradient(135deg,rgba(132,106,56,.065) 0,rgba(132,106,56,.065) 8px,transparent 8px,transparent 16px);
+}
+.chain-gap{
+  background-image:repeating-linear-gradient(135deg,rgba(18,60,42,.11) 0,rgba(18,60,42,.11) 7px,transparent 7px,transparent 14px);
+}
+.chain-section .kicker{max-width:660px}
+
+.fibre-index{
+  border-top:1px solid var(--line);
+}
+.fibre-index a{
+  display:grid;
+  grid-template-columns:minmax(150px,.42fr) 1fr auto;
+  align-items:baseline;
+  gap:30px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--ink);
+  text-decoration:none;
+}
+.fibre-index a::after{
+  content:"↗";
+  color:#846a38;
+}
+.fibre-index span{
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-size:clamp(1.8rem,3vw,2.8rem);
+}
+.fibre-index small{
+  color:var(--muted);
+  font-size:.88rem;
+}
+@media(hover:hover){
+  .fibre-index a:hover span{color:var(--forest)}
+}
+
+.carbon-teaser{
+  background:#23382f;
+  color:#f6f2e8;
+}
+.carbon-teaser h2,
+.carbon-teaser .lead{color:#fff}
+.carbon-teaser p{color:#d7ded8}
+.carbon-teaser .text-arrow{color:#f1dca4;border-color:#f1dca4}
+
+.programme-hero .lead{max-width:800px}
+.programme-focus .container{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:0 70px;
+  border-top:1px solid var(--line);
+}
+.programme-block{
+  padding:42px 0 48px;
+  border-bottom:1px solid var(--line);
+}
+.programme-block h2{
+  font-size:clamp(2rem,3.5vw,3.4rem);
+  margin-bottom:14px;
+}
+.programme-block-wide{padding-right:40px}
+.programme-block p:last-child{margin-bottom:0}
+.plain-list{
+  border-top:1px solid var(--line);
+}
+.plain-list p{
+  margin:0;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+.evidence-moment .source-line{
+  margin-top:8px;
+}
+.carbon-inline{
+  background:#f4f0e5;
+}
+
+/* Carbon resource */
+.carbon-hero{
+  padding-bottom:54px;
+}
+.carbon-hero h1{
+  font-size:clamp(3.3rem,7vw,6.4rem);
+}
+.carbon-warning{
+  padding:24px 0;
+  border-top:2px solid #846a38;
+  border-bottom:1px solid var(--line);
+}
+.carbon-warning strong{
+  display:block;
+  margin-bottom:8px;
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-size:1.4rem;
+}
+.carbon-warning p{margin-bottom:0}
+.carbon-pathways{padding-top:20px}
+.carbon-path{
+  display:grid;
+  grid-template-columns:minmax(210px,.48fr) 1fr;
+  gap:70px;
+  padding:46px 0;
+  border-top:1px solid var(--line);
+}
+.carbon-path:last-child{border-bottom:1px solid var(--line)}
+.carbon-path h2{font-size:clamp(2.3rem,4vw,4rem)}
+.path-label{
+  display:block;
+  margin-bottom:10px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  color:#846a38;
+  font-size:.7rem;
+  letter-spacing:.08em;
+}
+.definition-list{
+  border-top:1px solid #c7c5ba;
+}
+.definition-list div{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:24px;
+  padding:14px 0;
+  border-bottom:1px solid #c7c5ba;
+}
+.definition-list span{color:var(--muted)}
+.plain-qa{
+  margin-top:28px;
+  border-top:1px solid var(--line);
+}
+.plain-qa>div{
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.plain-qa h3{
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-size:1.35rem;
+}
+.source-library{
+  margin-top:28px;
+  border-top:1px solid var(--line);
+}
+.source-library a{
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  gap:28px;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--ink);
+  text-decoration:none;
+}
+.source-library a::after{
+  content:"↗";
+  color:#846a38;
+}
+.source-library span{color:var(--muted)}
+.resource-disclaimer{
+  margin-top:36px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  font-size:.86rem;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  .chain-status{grid-template-columns:repeat(3,1fr)}
+  .chain-link:nth-child(3){border-right:0}
+  .programme-focus .container{grid-template-columns:1fr;gap:0}
+  .programme-block-wide{padding-right:0}
+  .carbon-path{grid-template-columns:1fr;gap:14px}
+}
+
+@media(max-width:640px){
+  .chain-status{grid-template-columns:1fr 1fr}
+  .chain-link:nth-child(3){border-right:1px solid var(--line)}
+  .chain-link:nth-child(even){border-right:0}
+  .fibre-index a{grid-template-columns:1fr auto;gap:10px 18px}
+  .fibre-index small{grid-column:1/-1}
+  .definition-list div{grid-template-columns:1fr;gap:4px}
+  .source-library a{grid-template-columns:1fr auto;gap:8px 18px}
+  .source-library span{grid-column:1/-1}
+}
