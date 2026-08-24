@@ -1,0 +1,49 @@
+NATURAL FIBRES IRELAND V9 — FRESH GITHUB DEPLOYMENT
+
+RECOMMENDED: use a fresh repository so no old CSS or patch files interfere.
+
+1. Create a new PUBLIC GitHub repository.
+   Suggested name:
+     natural-fibres-ireland-2026
+
+2. Do not initialise it with a README, licence or .gitignore.
+
+3. Download and extract the V9 ZIP.
+
+4. In the new repository:
+     Add file -> Upload files
+
+5. Upload the CONTENTS of the extracted folder.
+   index.html and styles.css must be at the repository root.
+
+6. Commit:
+     Natural Fibres Ireland V9 full site
+
+7. Settings -> Pages
+   Source: Deploy from a branch
+   Branch: main
+   Folder: / (root)
+   Save.
+
+8. Test the temporary GitHub Pages URL first.
+   Because the site uses relative paths, styling, photos and links should work at the project URL.
+
+9. ONLY when the temporary site looks correct:
+   - open the OLD repository -> Settings -> Pages
+   - remove naturalfibresireland.ie from Custom domain
+   - open the NEW repository -> Settings -> Pages
+   - add naturalfibresireland.ie
+   - wait for DNS check
+   - enable Enforce HTTPS when GitHub allows it
+
+10. DO NOT change the existing Blacknight A records / www CNAME.
+    They already point to GitHub Pages.
+
+11. DO NOT edit the .com redirect repository.
+
+12. Google Search Console:
+    after the new site is live, resubmit:
+      https://naturalfibresireland.ie/sitemap.xml
+    and request indexing for:
+      https://naturalfibresireland.ie/
+      https://naturalfibresireland.ie/carbon-natural-fibres/

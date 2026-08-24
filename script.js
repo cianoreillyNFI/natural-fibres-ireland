@@ -1,58 +1,22 @@
 (() => {
-  'use strict';
-
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav-links');
-  const dropdown = document.querySelector('.nav-dropdown');
-
-  if (!toggle || !nav) return;
-
-  const closeMenu = () => {
+  const button = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  if (!button || !nav) return;
+  const close = () => {
     nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
-    if (dropdown) dropdown.removeAttribute('open');
+    button.setAttribute('aria-expanded','false');
+    button.setAttribute('aria-label','Open navigation');
   };
-
-  const openMenu = () => {
-    nav.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close navigation');
-  };
-
-  toggle.addEventListener('click', () => {
-    if (nav.classList.contains('open')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+  button.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   });
-
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { close(); button.focus(); }
   });
-
-  document.addEventListener('click', (event) => {
-    if (
-      window.matchMedia('(max-width: 900px)').matches &&
-      nav.classList.contains('open') &&
-      !nav.contains(event.target) &&
-      !toggle.contains(event.target)
-    ) {
-      closeMenu();
-    }
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !button.contains(e.target)) close();
   });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && nav.classList.contains('open')) {
-      closeMenu();
-      toggle.focus();
-    }
-  });
-
-  window.addEventListener('resize', () => {
-    if (!window.matchMedia('(max-width: 900px)').matches) {
-      closeMenu();
-    }
-  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 })();
