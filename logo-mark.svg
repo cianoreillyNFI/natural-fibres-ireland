@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
-  <title id="title">Natural Fibres Ireland mark</title>
-  <desc id="desc">An abstract woven fibre and leaf mark</desc>
-  <path d="M13 47C21 35 29 27 49 16" fill="none" stroke="#173d31" stroke-width="5" stroke-linecap="round"/>
-  <path d="M17 52C25 40 35 31 52 23" fill="none" stroke="#75916b" stroke-width="5" stroke-linecap="round"/>
-  <path d="M20 21C28 19 36 21 42 27C35 31 27 31 20 27C17 25 17 23 20 21Z" fill="#b56f45"/>
-  <path d="M34 11C40 11 47 14 51 20C45 23 39 22 34 18C31 16 31 13 34 11Z" fill="#75916b"/>
-</svg>
