@@ -1,0 +1,27 @@
+NATURAL FIBRES IRELAND — V6 NO-NAMES PATCH
+
+Edit ONLY:
+  natural-fibres-ireland
+
+Do NOT edit:
+  natural-fibres-ireland-redirect
+
+Upload the CONTENTS of this patch to the root of the main GitHub repository.
+
+This update:
+- removes About from the navigation and footer;
+- removes all founder/person references;
+- adds a "What we're about" section to the Mission/homepage;
+- invites ideas from growers, processors, researchers, manufacturers, designers and communities;
+- removes /about.html from the sitemap;
+- keeps /about.html only as a noindex redirect to /#about so old links do not break.
+
+Suggested commit message:
+  V6: remove About page and personal references
+
+After GitHub deploys, test:
+  https://naturalfibresireland.ie/
+  https://naturalfibresireland.ie/#about
+  https://naturalfibresireland.ie/about.html
+
+The final URL should redirect to the homepage section.
