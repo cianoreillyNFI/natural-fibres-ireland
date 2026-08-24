@@ -1,0 +1,26 @@
+NATURAL FIBRES IRELAND — V15.1 CACHE-BUSTED BUILD
+
+Why this version exists:
+The previous site reused styles.css, so browsers/CDNs could continue displaying
+an older cached stylesheet even when the HTML had updated.
+
+V15.1 uses:
+  styles-v15-1.css
+
+This forces the browser to download the current design.
+
+Upload the CONTENTS of this ZIP to the root of the existing repository.
+Replace the existing HTML files when prompted.
+
+After pushing:
+1. Wait for the GitHub Pages deployment to complete.
+2. Open https://naturalfibresireland.ie/
+3. Refresh once normally. A hard refresh should no longer be necessary because
+   the stylesheet has a new filename.
+
+Main navigation:
+Home · Fibres · Carbon · Programme · Get involved
+
+Fibres includes:
+- Hemp licence guide under Hemp
+- YouTube flax video under Flax
