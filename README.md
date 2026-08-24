@@ -1,6 +1,4 @@
-# Natural Fibres Ireland — V14
-
-Full multi-page site.
+# Natural Fibres Ireland — V15
 
 Main navigation:
 - Home
@@ -9,16 +7,9 @@ Main navigation:
 - Programme
 - Get involved
 
-V14 removes the small eyebrow-style section labels and uses a cleaner, bolder sans-serif editorial design.
-
-The homepage is mission-led and designed to feel like a real materials-sector platform:
-- clear mission first
-- large real photography
-- fibre showcase
-- processing / missing-middle story
-- carbon
-- programme
-- strong invitation to get involved
-
-Secondary resource:
-- Hemp licence guide
+Key changes:
+- white body text removed from major content sections
+- dark text on light linen/paper backgrounds for readability
+- Hemp licence guide linked from the Hemp section on Fibres
+- YouTube flax video embedded beside the Flax section
+- licensing remains secondary and is not in the main navigation

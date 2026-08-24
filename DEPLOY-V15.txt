@@ -1,0 +1,22 @@
+NATURAL FIBRES IRELAND — V15 FULL SITE
+
+Use as a full replacement.
+
+1. Delete current website files from the live repository.
+2. Extract the V15 ZIP.
+3. Upload all extracted files to the repository root.
+4. Confirm:
+   index.html
+   fibres.html
+   carbon.html
+   programme.html
+   contact.html
+   hemp-licence.html
+   styles.css
+   script.js
+   CNAME
+   are at the root.
+5. Commit:
+   V15 readability, flax video and hemp licensing
+6. GitHub Pages stays main / root.
+7. CNAME stays naturalfibresireland.ie.
