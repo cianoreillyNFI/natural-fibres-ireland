@@ -1,0 +1,43 @@
+NATURAL FIBRES IRELAND — V3 FIX
+
+ONLY edit the main repository: natural-fibres-ireland
+DO NOT edit natural-fibres-ireland-redirect.
+
+This update fixes:
+- homepage now IS the Mission page
+- logo is moved to /nfi-logo.png for a simpler reliable path
+- favicon moved to /favicon.png
+- explicit Google indexing/snippet meta tags added
+- robots.txt explicitly allows crawling
+- sitemap.xml makes the homepage the main indexed Mission URL
+- old /mission.html redirects to / to prevent duplicate Google results
+
+UPLOAD / REPLACE these files in the ROOT of the main GitHub repository:
+- index.html
+- mission.html
+- styles.css
+- script.js
+- robots.txt
+- sitemap.xml
+- CNAME
+- .nojekyll
+- nfi-logo.png
+- favicon.png
+- 404.html
+- about.html
+- collaborate.html
+- fibres.html
+- programme.html
+- privacy.html
+- thanks.html
+- farmers/ folder
+- hemp-licence-ireland/ folder
+
+After GitHub deploys:
+1. Open https://naturalfibresireland.ie/ in a private/incognito window.
+2. Confirm the Mission headline is first: "Enable Ireland to make more from its own fibres."
+3. Open https://naturalfibresireland.ie/nfi-logo.png directly; the logo should load.
+4. Open https://naturalfibresireland.ie/robots.txt; it should say Allow: /.
+5. If you use Google Search Console, inspect https://naturalfibresireland.ie/ and click Request indexing. Submit sitemap.xml too.
+
+Google search snippets are cached/indexed separately from the live site. A corrected robots.txt and meta description do not change the Google result instantly; a recrawl is required.
