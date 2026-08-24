@@ -1,0 +1,22 @@
+NATURAL FIBRES IRELAND — V14
+
+This is a FULL site replacement.
+
+1. Delete the current live site files in the repository.
+2. Keep the repository itself.
+3. Extract the V14 ZIP.
+4. Upload all extracted files to the repository root.
+5. Confirm index.html and styles.css are at the root.
+6. Commit:
+     V14 full site
+7. GitHub Pages remains:
+     main / root
+8. CNAME remains:
+     naturalfibresireland.ie
+
+Main navigation:
+  Home
+  Fibres
+  Carbon
+  Programme
+  Get involved

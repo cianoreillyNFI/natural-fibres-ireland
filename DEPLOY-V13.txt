@@ -1,0 +1,26 @@
+NATURAL FIBRES IRELAND — V13
+
+This is a clean MULTI-PAGE version.
+
+Main files:
+  index.html
+  fibres.html
+  carbon.html
+  programme.html
+  contact.html
+  hemp-licence.html
+  styles.css
+  script.js
+  CNAME
+
+Recommended deployment:
+1. Delete the current live website files from the repository.
+2. Keep the repository itself.
+3. Extract this V13 ZIP.
+4. Upload the CONTENTS to the repository root.
+5. Commit:
+     V13 clean multi-page site
+6. GitHub Pages should remain:
+     main / root
+7. CNAME is included and contains:
+     naturalfibresireland.ie
