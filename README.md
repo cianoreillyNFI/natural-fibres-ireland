@@ -1,16 +1,10 @@
-# Natural Fibres Ireland — V17
+# Natural Fibres Ireland — V17.1
 
-Main navigation:
-- Home
-- Fibres
-- Carbon
-- Programme
-- Get involved
+This revision makes the photographic backgrounds substantially more visible.
 
-V17:
+- Home landscape background: stronger image presence
+- Fibres sheep background: stronger image presence
+- Get involved sheep background: stronger image presence
+- dark text and light overlays retained for readability
 - all five fibre videos remain embedded
 - Hemp licensing remains under Fibres
-- landscape photograph used as a faded Home hero background
-- sheep photograph used as a faded background on Fibres and Get involved page headers
-- text remains dark for readability
-- cache-busted stylesheet: styles-v17.css

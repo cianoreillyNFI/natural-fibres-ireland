@@ -1,0 +1,11 @@
+NATURAL FIBRES IRELAND — V17.1
+
+Upload as a full replacement or overwrite the existing V17 files.
+
+The key change is:
+  styles-v17-1.css
+
+This forces browsers to load the stronger background treatment.
+
+Suggested commit:
+  V17.1 stronger photo backgrounds

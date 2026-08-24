@@ -1,0 +1,10 @@
+NATURAL FIBRES IRELAND — V17.2
+
+Change:
+- Replaced the previous Hemp YouTube video with:
+  https://youtu.be/Nfr8NWELWbk
+
+Everything else is unchanged from the latest build.
+
+Suggested commit:
+  V17.2 update hemp video
