@@ -1,0 +1,45 @@
+<!-- ============================================================
+     CANONICAL HEADER — paste this identical block into EVERY page.
+
+     Why this file exists: your site currently ships three different
+     navigations and two different logos.
+
+       index.html          Mission / Fibres / Farmers / Programme
+                           + Resources + Get involved
+                           logo: nfi-logo.png       theme: #123c2a
+       hemp-licence-...    same, plus "About"
+                           logo: nfi-logo.png       theme: #123c2a
+       programme.html      Home / Mission / Fibres / Programme /
+                           Collaborate / Get involved
+                           logo: assets/logo-mark.svg   theme: #173d31
+
+     Three navs, two logos, two greens. A reader who visits two pages
+     sees the site change shape under them. Fixing this is the single
+     highest-value change in this whole bundle — and it costs nothing
+     but copy and paste.
+
+     On each page, set aria-current="page" on the matching link and
+     remove it from the others.
+     ============================================================ -->
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="site-header__logo" href="/">
+      <img src="/nfi-logo.png" alt="" width="34" height="34">
+      <span class="site-header__name">Natural Fibres Ireland
+        <span class="site-header__tag">Independent &middot; not a state body</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/">Mission</a>
+      <a href="/fibres.html">Fibres</a>
+      <a href="/farmers/">Farmers</a>
+      <a href="/programme.html">Programme</a>
+      <a href="/hemp-licence-ireland/">Hemp licence</a>
+      <a href="/about.html">About</a>
+      <a class="btn btn--quiet" href="/collaborate.html">Get in touch</a>
+    </nav>
+  </div>
+</header>

@@ -1,27 +1,77 @@
-# Natural Fibres Ireland — website v2
+# Natural Fibres Ireland — site improvement bundle
 
-Static GitHub Pages website for naturalfibresireland.ie.
+Reviewed 24 August 2026 against the live site.
 
-## Upload
-Upload the CONTENTS of this folder to the root of the main `natural-fibres-ireland` repository. Keep the folder structure, especially `assets/`, `farmers/` and `hemp-licence-ireland/`.
+## What's in here
 
-Do not upload these files to the separate `.com` redirect repository. That repository should stay unchanged.
+```
+css/nfi.css              One design system to replace the two currently in use
+index.html               Rewritten homepage (new copy + the chain graphic)
+partials/header.html     Canonical header — paste into EVERY page
+partials/footer.html     Canonical footer — paste into EVERY page
+CONTENT-FIXES.md         The audit: what reads as AI-generated and why
+README.md                This file
+```
 
-## Important one-time form activation
-The Collaborate and Farmers forms use the free FormSubmit.co endpoint for `hello@naturalfibresireland.ie`. After the site is live:
-1. Confirm that `hello@naturalfibresireland.ie` receives mail.
-2. Submit either website form once.
-3. FormSubmit will email an activation/confirmation link to that mailbox.
-4. Click the confirmation link.
-5. Submit the form again and confirm the enquiry arrives.
+Read `CONTENT-FIXES.md` first. The design files are the smaller half of the fix.
 
-Until that activation is completed, forms are not fully live.
+## Installing
 
-## Regulatory review
-The hemp licence page was checked against public HPRA, DAFM, BISS and Oireachtas material on 21 August 2026. It does **not** claim to have been reviewed or approved by HPRA or DAFM. Recheck the page in January 2027 or sooner if legislation changes.
+This is a static site, so there's no build step.
 
-## Logo
-`assets/nfi-logo.png` is the supplied Natural Fibres Ireland logo with the near-white background removed and whitespace cropped for web use. `assets/favicon.png` is the emblem crop.
+**Note on the zip:** GitHub doesn't unpack zip archives — if you upload it as-is it
+just sits in the repo as a binary blob. Extract it locally first, then commit the
+files. Either drag them into the GitHub web uploader, or:
 
-## Photos
-No stock photos were added. Add real Irish fibre/processing/project photography later rather than weakening the site's credibility with generic imagery.
+```bash
+unzip nfi-improvements.zip
+cp -r nfi-improvements/css nfi-improvements/partials .
+cp nfi-improvements/index.html ./index-new.html   # compare before overwriting
+git add . && git commit -m "Unify design system, rewrite homepage"
+git push
+```
+
+Keep the old `index.html` around until you've compared them side by side.
+
+### On every page
+
+1. Add the stylesheet and fonts to `<head>`:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nfi.css">
+```
+
+2. Remove the old per-page `<style>` blocks and stylesheet links.
+3. Set `<meta name="theme-color" content="#1e4032">` — the site currently ships two
+   different values.
+4. Paste in `partials/header.html` and `partials/footer.html`.
+5. On each page set `aria-current="page"` on the matching nav link, and remove it
+   from the others.
+
+### Before every deploy
+
+```bash
+grep -rn "todo-fill" --include="*.html" .
+```
+
+Should return nothing. The placeholder style is deliberately loud yellow so it can't
+ship unnoticed, but check anyway.
+
+## Things I couldn't do from outside
+
+- I only fetched `index.html`, `programme.html` and `hemp-licence-ireland/`. I have
+  not seen `fibres.html`, `farmers/`, `collaborate.html`, `about.html` or
+  `privacy.html`, so the CSS may need small additions for components on those pages.
+- The six chain stages in `index.html` are **plausible guesses**. Verify all six
+  before publishing — see section 4 of `CONTENT-FIXES.md`.
+- The `todo-fill` block asking who runs this is the most important thing on the page
+  and only you can write it.
+
+## Accessibility floor
+
+Already handled in the CSS, please don't remove: visible keyboard focus rings,
+a skip link, `prefers-reduced-motion` respected, and colour contrast checked against
+WCAG AA for body text on both the linen and field backgrounds.
