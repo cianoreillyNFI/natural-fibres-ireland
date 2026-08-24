@@ -1,0 +1,26 @@
+NFI PHOTO HOTFIX
+
+Upload ALL files in this folder directly to the ROOT of the main GitHub repository:
+natural-fibres-ireland
+
+Replace:
+- index.html
+- fibres.html
+
+Add:
+- nfi-hemp-harvest.webp
+- nfi-hemp-stems.webp
+- nfi-flax.webp
+- nfi-wool.webp
+- nfi-willow.webp
+- nfi-nettle.webp
+
+Do NOT put the photos in an images folder.
+
+Do NOT edit the natural-fibres-ireland-redirect repository.
+
+After GitHub deploys, test:
+https://naturalfibresireland.ie/nfi-hemp-harvest.webp
+https://naturalfibresireland.ie/nfi-nettle.webp
+
+If those URLs show the images, the website will be able to load them.
